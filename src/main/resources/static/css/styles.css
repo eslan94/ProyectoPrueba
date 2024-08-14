@@ -1,0 +1,68 @@
+.section{
+    display: flex;
+    margin-top: 300px;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+}
+
+.txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 370px;
+    height: 230px;
+}
+
+
+.contenedor{
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+
+.box-txt{
+    display: flex;
+    padding-left: 10px;
+    gap: 20px;
+}
+
+.color{
+    display: flex;
+    gap: 5px;
+}
+
+.km{
+    display: flex;
+    gap: 5px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.comprar{
+    text-align: right;
+}
+
+.opciones{
+    margin-top: 10px;
+    text-align: right;
+}

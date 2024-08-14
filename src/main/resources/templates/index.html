@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda de Carros</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .jumbotron-custom {
+          background-image: url('[[@{/img/img2.jpg}]]');
+          background-size: cover;
+          background-position: center;
+        }
+        .card-img-top {
+            height: 200px; /* Ajusta la altura según tu preferencia */
+            object-fit: cover; /* Ajusta la imagen para que cubra todo el espacio del contenedor */
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" th:href="@{/index}">Tienda de Carros</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" th:href="@{/index}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/carros}">Vehículos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/facturas}">Registros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/empleado}">Empleado</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="jumbotron jumbotron-fluid text-center text-white jumbotron-custom" >
+    <div class="container">
+        <h1 class="display-4">Bienvenido a la Tienda de Carros</h1>
+        <p class="lead">Encuentra tu auto ideal con las mejores ofertas</p>
+    </div>
+</header>
+
+<!-- Main content -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Car 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img th:src="@{/img/imgBG.webp}" class="card-img-top" alt="Car 1">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo X</h5>
+                    <p class="card-text">El Modelo X combina rendimiento y elegancia con características avanzadas.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Car 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://images.stockcake.com/public/3/4/e/34eb910b-cd62-4567-b37b-2e1caa081b2f_large/futuristic-luxury-car-stockcake.jpg" class="card-img-top" alt="Car 2">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo Y</h5>
+                    <p class="card-text">Descubre el confort y la tecnología, perfecto para cualquier aventura.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Car 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://images.stockcake.com/public/e/f/2/ef26221c-adee-4f6a-bc96-23270f1a522b_large/luxurious-sports-car-stockcake.jpg" class="card-img-top" alt="Car 3">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo Z</h5>
+                    <p class="card-text">El Modelo Z redefine la eficiencia y el diseño en un auto compacto.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Car 4 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img th:src="@{/img/img6.jpeg}" class="card-img-top" alt="Car 1">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo O</h5>
+                    <p class="card-text">El Modelo O combina rendimiento y elegancia con características avanzadas.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Car 5 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img th:src="@{/img/img7.jpeg}" class="card-img-top" alt="Car 2">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo P</h5>
+                    <p class="card-text">Descubre el confort y la tecnología del Modelo P, perfecto para cualquier aventura.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+        <!-- Car 3 -->
+        <div class="col-md-4">
+            <div class="card">
+                <img th:src="@{/img/img8.jpeg}" class="card-img-top" alt="Car 3">
+                <div class="card-body">
+                    <h5 class="card-title">Modelo Q</h5>
+                    <p class="card-text">El Modelo Q redefine la eficiencia y el diseño en un auto compacto.</p>
+                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024 Tienda de Carros. Todos los derechos reservados.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
