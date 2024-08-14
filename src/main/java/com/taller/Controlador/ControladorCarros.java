@@ -27,12 +27,23 @@ public class ControladorCarros {
         return "/index";
     }
 
+    @GetMapping("/indexUser")
+    public String mostrarIndex2(Model model){
+        return "/indexUser";
+    }
+
     //LEER
     @GetMapping("/carros")
     public String mostrarProductos(Model model){
         List<Carros> carros = carrosServicio.listarCarros();
         model.addAttribute("carros", carros);
         return "/Producto/listaPrductos";
+    }
+    @GetMapping("/carrosUser")
+    public String mostrarProductos2(Model model){
+        List<Carros> carros = carrosServicio.listarCarros();
+        model.addAttribute("carros", carros);
+        return "/Producto/listaPrductos2";
     }
 
     //CREAR
