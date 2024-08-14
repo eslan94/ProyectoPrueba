@@ -66,3 +66,50 @@ img{
     margin-top: 10px;
     text-align: right;
 }
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+.datos{
+    width: 350px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgb(211, 206, 206);
+    border-radius: 3px;
+}
+
+.ingresar{
+    width: 350px;
+    height: 55px;
+    background-color: black;
+    border: 1px solid rgb(211, 206, 206);
+    color: #F8F9F9;
+    font-size: 20px;
+    border-radius: 4px;
+}
+
+.login p{
+    padding-top: 10px;
+}
+
+.hide{
+    position: absolute;
+    transform: translateY(-2000px);
+}
+
+.navbar-icon{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 30px;
+}
+
+footer{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+}
