@@ -19,7 +19,7 @@ public class InicioControlador {
         if (error!=null){
             model.addAttribute("error", "Usuario o Contraseña Invalida");
         }
-        return "Usuario/login";
+        return "Usuario/cuenta";
     }
 
     @PostMapping("/registro")
@@ -27,7 +27,7 @@ public class InicioControlador {
         try {
             usuarioServicio.registrarUsuario(nombre, email, password);
             model.addAttribute("exito", "Usuario registrado");
-            return "login";
+            return "Usuario/cuenta";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
             return "usuario";
@@ -37,11 +37,11 @@ public class InicioControlador {
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/inicioSesion")
     public String inicioSesion(){
-        return "/indexUser";
+        return "Usuario/inicioSesion";
     }
 
     @GetMapping("/logout")
     public String cerrarSesion(){
-        return "Usuario/login";
+        return "Usuario/cuenta";
     }
 }
