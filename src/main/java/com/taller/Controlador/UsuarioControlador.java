@@ -48,20 +48,22 @@ public class UsuarioControlador {
 //        }
 //        return "role";
 //    }
-@GetMapping("/inicioSesion")
-public String inicioSesion() {
-    // Obtener la autenticación del contexto de seguridad
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-    // Verificar si el usuario tiene el rol de ADMIN
-    if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
-        return "/Admin/AdminCarros";
-    } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER"))) {
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
+    @GetMapping("/inicioSesion")
+    public String inicioSesion() {
+        // Obtener la autenticación del contexto de seguridad
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        // Verificar si el usuario tiene el rol de ADMIN
+        if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
+            return "/Admin/AdminCarros";
+        } else if (authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_USER"))) {
+            return "indexUser";
+        }
+
+        // En caso de que no tenga ninguno de los roles esperados, redirigir a una página predeterminada
         return "indexUser";
-    }
-
-    // En caso de que no tenga ninguno de los roles esperados, redirigir a una página predeterminada
-    return "indexUser";
 }
 
 
