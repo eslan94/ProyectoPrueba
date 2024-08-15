@@ -9,13 +9,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         .jumbotron-custom {
-          background-image: url('[[@{/img/img2.jpg}]]');
-          background-size: cover;
-          background-position: center;
+            background-image: url('[[@{/img/img2.jpg}]]');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .card-img-top {
-            height: 200px; /* Ajusta la altura según tu preferencia */
-            object-fit: cover; /* Ajusta la imagen para que cubra todo el espacio del contenedor */
+        .container {
+            max-width: 900px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 10px;
+        }
+        .btn-primary {
+            border-radius: 25px;
+            padding: 0.5rem 2rem;
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #003d80;
         }
     </style>
 </head>
@@ -31,7 +49,6 @@
             <li class="nav-item active">
                 <a class="nav-link" th:href="@{/carros}">Inicio <span class="sr-only">(current)</span></a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/formulario}">Vehículos</a>
             </li>
@@ -42,7 +59,7 @@
                 <a class="nav-link" th:href="@{/empleado}">Empleados</a>
             </li>
         </ul>
-        <ul class="navbar-icon" id="icons" >
+        <ul class="navbar-icon" id="icons">
             <li>
                 <a th:href="@{/logout}" style="color: white">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -56,42 +73,47 @@
 </nav>
 
 <!-- Header -->
-<header class="jumbotron jumbotron-fluid text-center text-white jumbotron-custom" >
+<header class="jumbotron jumbotron-fluid text-center jumbotron-custom">
     <div class="container">
         <h1 class="display-4">Agregar Empleado</h1>
     </div>
 </header>
-<div class="container mt-3">
-    <h2>Formulario Empleado</h2>
-    <form th:action="@{/guardarEmpleado}" method="post" th:object="${empleado}">
-        <div class="mb-3">
-            <label for="id-codigo" class="form-label">Codigo Clientes</label>
-            <input type="number" class="form-control" id="id-codigo" th:field="*{id}">
-        </div>
-        <div class="mb-3">
-            <label for="id-nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="id-nombre" th:field="*{nombre}">
-            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
-        </div>
-        <div class="mb-3">
-            <label for="id-apellido" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="id-apellido" th:field="*{apellido}">
-            <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></span>
-        </div>
-        <div class="mb-3">
-            <label for="id-telefono" class="form-label">Telefono</label>
-            <input type="text" class="form-control" id="id-telefono" th:field="*{telefono}">
-            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></span>
-        </div>
-        <div class="mb-3">
-            <label for="id-email" class="form-label">Correo Electrónico</label>
-            <input type="text" class="form-control" id="id-email" th:field="*{email}">
-            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-        </div>
-        <button type="submit" class="btn btn-primary">Guardar</button>
-    </form>
 
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h2 class="card-title">Formulario Empleado</h2>
+            <form th:action="@{/guardarEmpleado}" method="post" th:object="${empleado}">
+                <div class="mb-3">
+                    <label for="id-codigo" class="form-label">Código Cliente</label>
+                    <input type="number" class="form-control" id="id-codigo" th:field="*{id}">
+                </div>
+                <div class="mb-3">
+                    <label for="id-nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="id-nombre" th:field="*{nombre}">
+                    <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="id-apellido" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="id-apellido" th:field="*{apellido}">
+                    <span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="id-telefono" class="form-label">Teléfono</label>
+                    <input type="text" class="form-control" id="id-telefono" th:field="*{telefono}">
+                    <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label for="id-email" class="form-label">Correo Electrónico</label>
+                    <input type="text" class="form-control" id="id-email" th:field="*{email}">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
 </div>
+
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-5">
     <p>&copy; 2024 Tienda de Carros. Todos los derechos reservados.</p>
