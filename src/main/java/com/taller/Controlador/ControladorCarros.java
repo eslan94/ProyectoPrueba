@@ -1,6 +1,7 @@
 package com.taller.Controlador;
 
 import com.taller.Entidad.Carros;
+import com.taller.Repositorio.CarrosRepositorio;
 import com.taller.Servicio.CarrosServicio;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +20,27 @@ import java.util.Optional;
 public class ControladorCarros {
 
     @Autowired
+    private CarrosRepositorio carrosRepositorio;
+    @GetMapping("/index")
+    public String mostrarCarros(Model model) {
+        List<Carros> carros = carrosRepositorio.findAll();
+        model.addAttribute("carros", carros);
+        return "index";
+    }
+
+    @Autowired
     CarrosServicio carrosServicio;
 
     //Index
-    @GetMapping("/index")
-    public String mostrarIndex(Model model){
-        return "/index";
-    }
+//    @GetMapping("/index")
+//    public String mostrarIndex(Model model){
+//        return "/index";
+//    }
 
     @GetMapping("/indexUser")
     public String mostrarIndex2(Model model){
+        List<Carros> carros = carrosRepositorio.findAll();
+        model.addAttribute("carros", carros);
         return "/indexUser";
     }
 
@@ -80,4 +92,6 @@ public class ControladorCarros {
         carrosServicio.eliminarCarros(id);
         return "redirect:/carros";
     }
+
+
 }

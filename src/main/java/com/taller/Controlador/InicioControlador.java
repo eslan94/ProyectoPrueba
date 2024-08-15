@@ -22,26 +22,5 @@ public class InicioControlador {
         return "Usuario/cuenta";
     }
 
-    @PostMapping("/registro")
-    public String registroUsuario(@RequestParam String nombre, @RequestParam String email, @RequestParam String password, Model model) {
-        try {
-            usuarioServicio.registrarUsuario(nombre, email, password);
-            model.addAttribute("exito", "Usuario registrado");
-            return "Usuario/cuenta";
-        } catch (Exception e) {
-            model.addAttribute("error", e.getMessage());
-            return "usuario";
-        }
-    }
 
-    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/inicioSesion")
-    public String inicioSesion(){
-        return "Usuario/inicioSesion";
-    }
-
-    @GetMapping("/logout")
-    public String cerrarSesion(){
-        return "Usuario/cuenta";
-    }
 }
