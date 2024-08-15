@@ -1,7 +1,9 @@
 package com.taller.Controlador;
 
+import com.taller.Entidad.Empleado;
 import com.taller.Entidad.Usuario;
 import com.taller.Servicio.UsuarioServicio;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -9,7 +11,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -20,9 +24,10 @@ import java.util.List;
 public class UsuarioControlador {
     @Autowired
     private UsuarioServicio usuarioServicio;
+
     @Autowired
     private ControladorCarros controladorCarros;
-    
+
 
 
     @PostMapping("/registro")
@@ -36,6 +41,7 @@ public class UsuarioControlador {
             return "index";
         }
     }
+
 
 //    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
 //    @GetMapping("/inicioSesion")
