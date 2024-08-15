@@ -23,7 +23,6 @@ public class ControladorCarros {
     @Autowired
     private CarrosRepositorio carrosRepositorio;
 
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
     @GetMapping("/index")
     public String mostrarCarros(Model model) {
         List<Carros> carros = carrosRepositorio.findAll();
@@ -56,7 +55,7 @@ public class ControladorCarros {
         model.addAttribute("carros", carros);
         return "/Producto/listaPrductos";
     }
-    @PreAuthorize("hasAnyRole('ROLE_ADMIN')")
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
     @GetMapping("/carrosUser")
     public String mostrarProductos2(Model model){
         List<Carros> carros = carrosServicio.listarCarros();

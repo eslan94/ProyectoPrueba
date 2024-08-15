@@ -25,7 +25,7 @@ public class Carros {
     @NotBlank(message = "El color es obligatorio")
     private String color;
 
-    @Size(max = 255, message = "La descripción no puede exceder 255 caracteres")
+    @Size(max = 1000, message = "La descripción no puede exceder 1000 caracteres")
     private String descripcion;
 
     @NotNull(message = "La URL de la imagen es obligatoria")
