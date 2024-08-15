@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Lista Carros Admin</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" th:href="@{/index}">Tienda de Carros</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/index}">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/carrosUser}">Vehículos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/facturas}">Registros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/empleado}">Empleados</a>
+                </li>
+            </ul>
+            <ul class="navbar-icon" id="icons" >
+                <li>
+                    <a  th:href="@{/login}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                    </svg></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron jumbotron-fluid text-center text-white jumbotron-custom" >
+        <div class="container">
+            <h1 class="display-4">Autos</h1>
+
+        </div>
+    </header>
+    <div class="col-lg-12 mt-3">
+        <h2>Lista</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="carro : ${carros}">
+                <td th:text="${carro.id}"></td>
+                <td th:text="${carro.marca}"></td>
+                <td th:text="${carro.modelo}"></td>
+                <td th:text="${carro.color}"></td>
+                <td><img th:src="@{carro.img}"></td>
+                <td th:text="${carro.precio}"></td>
+                <td>
+                    <a th:href="@{/editar/{id}(id=${producto.id})}" class="btn btn-primary text-white">Actualizar</a>
+                    <a th:href="@{/eliminar/{id}(id=${producto.id})}" class="btn btn-danger text-white">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/formulario}" class="btn btn-success text-white">Nuevo Producto</a>
+        <a th:href="@{/productos/pdf}" class="btn btn-success text-white">Productos Pdf</a>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Tienda de Carros. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

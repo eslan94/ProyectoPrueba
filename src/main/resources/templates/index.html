@@ -5,7 +5,9 @@
     <link href="/Css/styles.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Tienda de Carros</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
     <style>
         .jumbotron-custom {
           background-image: url('[[@{/img/img2.jpg}]]');
@@ -53,77 +55,85 @@
     </div>
 </header>
 
+<section class="section">
+    <div class="txt">
+        <h3>ENCUENTRA TODA CLASE DE MARCAS</h3>
+        <p>MARCAS</p>
+        <hr class="hr" style="width:100%;">
+    </div>
+</section>
+
 <!-- Main content -->
 <div class="container mt-5">
     <div class="row">
         <!-- Car 1 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/imgBG.webp}" class="card-img-top" alt="Car 1">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo X</h5>
-                    <p class="card-text">El Modelo X combina rendimiento y elegancia con características avanzadas.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+        <div class="col-md-4 mt-5">
+            <div>
+                <img src="/static/img/toyota_png.png" class="card-img-top" alt="Car 1">
+                <div class="card-body ">
+                    <h5 class="card-title text-center">Toyota</h5>
                 </div>
             </div>
         </div>
         <!-- Car 2 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://images.stockcake.com/public/3/4/e/34eb910b-cd62-4567-b37b-2e1caa081b2f_large/futuristic-luxury-car-stockcake.jpg" class="card-img-top" alt="Car 2">
+        <div class="col-md-4 mt-5">
+            <div>
+                <img src="/static/img/ford.png" class="card-img-top" alt="Car 2">
                 <div class="card-body">
-                    <h5 class="card-title">Modelo Y</h5>
-                    <p class="card-text">Descubre el confort y la tecnología, perfecto para cualquier aventura.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                    <h5 class="card-title text-center">Ford</h5>
                 </div>
             </div>
         </div>
         <!-- Car 3 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://images.stockcake.com/public/e/f/2/ef26221c-adee-4f6a-bc96-23270f1a522b_large/luxurious-sports-car-stockcake.jpg" class="card-img-top" alt="Car 3">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo Z</h5>
-                    <p class="card-text">El Modelo Z redefine la eficiencia y el diseño en un auto compacto.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+        <div class="col-md-4 mt-5">
+            <div >
+                <img src="/static/img/kia.png" class="card-img-top" alt="Car 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Kia</h5>
                 </div>
             </div>
         </div>
         <!-- Car 4 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/img6.jpeg}" class="card-img-top" alt="Car 1">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo O</h5>
-                    <p class="card-text">El Modelo O combina rendimiento y elegancia con características avanzadas.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+        <div class="col-md-4 mt-5">
+            <div>
+                <img src="/static/img/mercedes.png" class="card-img-top" alt="Car 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Mercedes</h5>
                 </div>
             </div>
         </div>
         <!-- Car 5 -->
-        <div class="col-md-4">
-            <div class="card">
+        <div class="col-md-4 mt-5">
+            <div >
                 <img th:src="@{/img/img7.jpeg}" class="card-img-top" alt="Car 2">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo P</h5>
-                    <p class="card-text">Descubre el confort y la tecnología del Modelo P, perfecto para cualquier aventura.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Hyundai</h5>
                 </div>
             </div>
         </div>
         <!-- Car 3 -->
-        <div class="col-md-4">
-            <div class="card">
+        <div class="col-md-4 mt-5">
+            <div >
                 <img th:src="@{/img/img8.jpeg}" class="card-img-top" alt="Car 3">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo Q</h5>
-                    <p class="card-text">El Modelo Q redefine la eficiencia y el diseño en un auto compacto.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Renault</h5>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="contenedor-1">
+    <div class="box-1">
+        <img src="/static/img/Expo-1.png" alt="" class="img-1">
+    </div>
+    <div class="box-txt-1">
+        <h5>¿ESTÁS INTERESADO EN UN AUTO?</h5>
+        <a class="btn btn-primary text-white" th:href="@{/login}">Regístrate aquí</a>
+    </div>
+</div>
+
+
 
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-5">

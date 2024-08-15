@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Tienda de Carros</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/styles.css" rel="stylesheet">
     <style>
         .jumbotron-custom {
-          background-image: url('[[@{/img/img2.jpg}]]');
+          background-image: url('[[@{/img/banner2.jpg}]]');
           background-size: cover;
           background-position: center;
         }
@@ -33,6 +35,13 @@
                 <a class="nav-link" th:href="@{/carrosUser}">Vehículos</a>
             </li>
         </ul>
+        <ul class="navbar-icon" id="icons" >
+            <li>
+                <a th:href="@{/login}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                </svg></a>
+            </li>
+        </ul>
     </div>
 </nav>
 
@@ -44,76 +53,110 @@
     </div>
 </header>
 
+<section class="section">
+    <div class="txt">
+        <h3>DESTACADOS</h3>
+        <p>STOCK</p>
+        <hr class="hr" style="width:100%;">
+    </div>
+</section>
+
 <!-- Main content -->
-<div class="container mt-5">
-    <div class="row">
-        <!-- Car 1 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/imgBG.webp}" class="card-img-top" alt="Car 1">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo X</h5>
-                    <p class="card-text">El Modelo X combina rendimiento y elegancia con características avanzadas.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
+<section class="contenedor">
+    <div class="box">
+        <a><img src=""></a><br>
+        <a><h5 class="title">BMW ACTIVE</h5></a>
+        <h6>$28.900</h6>
+        <hr class="hr" style="width:100%;">
+        <div class="content">
+            <div class="box-txt">
+                <div class="color">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+                        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+                    </svg>
+                    <h6>Gris</h6>
                 </div>
+                <div class="km">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                    </svg>
+                    <h6>66.000</h6>
+                </div>
+
             </div>
-        </div>
-        <!-- Car 2 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://images.stockcake.com/public/3/4/e/34eb910b-cd62-4567-b37b-2e1caa081b2f_large/futuristic-luxury-car-stockcake.jpg" class="card-img-top" alt="Car 2">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo Y</h5>
-                    <p class="card-text">Descubre el confort y la tecnología, perfecto para cualquier aventura.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <!-- Car 3 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://images.stockcake.com/public/e/f/2/ef26221c-adee-4f6a-bc96-23270f1a522b_large/luxurious-sports-car-stockcake.jpg" class="card-img-top" alt="Car 3">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo Z</h5>
-                    <p class="card-text">El Modelo Z redefine la eficiencia y el diseño en un auto compacto.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <!-- Car 4 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/img6.jpeg}" class="card-img-top" alt="Car 1">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo O</h5>
-                    <p class="card-text">El Modelo O combina rendimiento y elegancia con características avanzadas.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <!-- Car 5 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/img7.jpeg}" class="card-img-top" alt="Car 2">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo P</h5>
-                    <p class="card-text">Descubre el confort y la tecnología del Modelo P, perfecto para cualquier aventura.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
-                </div>
-            </div>
-        </div>
-        <!-- Car 3 -->
-        <div class="col-md-4">
-            <div class="card">
-                <img th:src="@{/img/img8.jpeg}" class="card-img-top" alt="Car 3">
-                <div class="card-body">
-                    <h5 class="card-title">Modelo Q</h5>
-                    <p class="card-text">El Modelo Q redefine la eficiencia y el diseño en un auto compacto.</p>
-                    <a th:href="@{/carros}" class="btn btn-primary">Ver más</a>
-                </div>
+            <div class="comprar">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg></a>
             </div>
         </div>
     </div>
+    <div class="box">
+        <a><img src=""></a><br>
+        <a><h5 class="title">VOLKSWAGEN POLO</h5></a>
+        <h6>$13.900</h6>
+        <hr class="hr" style="width:100%;">
+        <div class="content">
+            <div class="box-txt">
+                <div class="color">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+                        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+                    </svg>
+                    <h6>Blanco</h6>
+                </div>
+                <div class="km">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                    </svg>
+                    <h6>$50.000</h6>
+                </div>
+
+            </div>
+            <div class="comprar">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg></a>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <a><img src=""></a><br>
+        <a><h5 class="title">RENAULT DUSTER</h5></a>
+        <h6>$18.400</h6>
+        <hr class="hr" style="width:100%;">
+        <div class="content">
+            <div class="box-txt">
+                <div class="color">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+                        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+                    </svg>
+                    <h6>Café</h6>
+                </div>
+                <div class="km">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z"/>
+                        <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3"/>
+                    </svg>
+                    <h6>$18.400</h6>
+                </div>
+
+            </div>
+            <div class="comprar">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+                </svg></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="btn-all">
+    <button type="submit" class="btn btn-primary">VER TODOS LOS AUTOS</button>
 </div>
 
 <!-- Footer -->

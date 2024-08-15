@@ -1,9 +1,8 @@
 .section{
     display: flex;
-    margin-top: 300px;
+    flex-direction: column;
+    padding-top:30px;
     width: 100%;
-    height: 200px;
-    justify-content: center;
 }
 
 .txt{
@@ -21,7 +20,7 @@ img{
 
 .contenedor{
     display: flex;
-    margin: 20px;
+    padding: 50px;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 40px;
@@ -112,3 +111,47 @@ footer{
     bottom: 0;
     width: 100%;
 }
+
+.btn-all{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-1{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-right: 100px;
+    margin-bottom: 40px;
+}
+
+.box-txt-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-2{
+    height: 40px;
+    width: 200px;
+    background-color: #2F4C5B;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 0;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.img-1{
+    height: 500px;
+    width: 850px;
+}
+
+
