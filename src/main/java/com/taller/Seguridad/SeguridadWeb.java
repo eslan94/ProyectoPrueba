@@ -19,6 +19,12 @@ public class SeguridadWeb {
     @Autowired
     private UsuarioServicio usuarioServicio;
 
+    @Autowired
+    public void configuredGlobal(AuthenticationManagerBuilder auth) throws Exception{
+        auth.userDetailsService(usuarioServicio)
+                .passwordEncoder(new BCryptPasswordEncoder());
+    }
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http.authorizeRequests(authorizeRequest ->
@@ -45,9 +51,5 @@ public class SeguridadWeb {
         return http.build();
     }
 
-    @Autowired
-    public void configuredGlobal(AuthenticationManagerBuilder auth) throws Exception{
-        auth.userDetailsService(usuarioServicio)
-                .passwordEncoder(new BCryptPasswordEncoder());
-    }
+
 }
