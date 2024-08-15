@@ -10,6 +10,6 @@ public class AdminControlador {
 
     @GetMapping("/registro")
     public String panelAdministrador(){
-        return "/Admin/AdminCarros";
+        return "Administrador/panelControl";
     }
 }
